@@ -1,5 +1,5 @@
-# Text-mining
-Mining PubMed/PMC for lifestyle factors.
+## Text-mining
+# Mining PubMed/PMC for lifestyle factors.
 
 ----- STEP 1: Create the types, entities, names, blacklist etc. files ------
 
