@@ -16,7 +16,7 @@ rule convert_obo:
 
 rule disambiguate:
     input:
-        {rules.convert_obo.names}
+        {rules.convert_obo.output.names}
     output:
         "disambiguated_Lifestyle_Factor_Ontology_wo_Obsolete_names.tsv"
     shell:
