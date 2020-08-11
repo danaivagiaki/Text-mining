@@ -1,8 +1,8 @@
-# Mining PubMed/PMC for lifestyle factors.
+# Mining PubMed/PMC for lifestyle factors
 
 ### STEP 1: Create the types, entities, names, blacklist etc. files
 
-#### FROM AN  .obo FILE (e,g, Lifestyle_Factor_Ontology_wo_Obsolete.obo) (REMOVING THE OBSOLETE TERMS IS IMPORTANT FOR THE DISAMBIGUATION STEP (see below) )
+#### FROM AN  .obo FILE (e.g. Lifestyle_Factor_Ontology_wo_Obsolete.obo) (REMOVING THE OBSOLETE TERMS IS IMPORTANT FOR THE DISAMBIGUATION STEP (see below) )
 
 Step 1a:
 
@@ -18,7 +18,7 @@ Step 1b:
 `awk 'BEGIN{FS=", "}{print ++i"\t""-94\t"$1}' Lifestyle-factor_Synonyms.txt > lf_entities.tsv
 awk 'BEGIN{FS=", "; OFS="\t"; i=1}{if (NF>1) {for (f=1;f<=NF;f++) print i,$f} else {print i,$0}; i++}' Lifestyle-factor_Synonyms.txt > lf_names.tsv`
 
-
+\n
 
 ### STEP 2: Run tagcorpus 
 
