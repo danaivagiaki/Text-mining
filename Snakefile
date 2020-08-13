@@ -1,6 +1,6 @@
 rule all:
     input:
-        "Lifestyle_Factor_Ontology_wo_Obsolete_fulltext_output_for_review_with_text.tsv"
+        "Lifestyle_Factor_Ontology_wo_Obsolete_fulltext_output_for_review.tsv"
 
 
 rule convert_obo:
@@ -45,11 +45,12 @@ rule sampling:
         "./sample_matches_to_review.py"
 
 
-rule extract_text:
-    input:
-        {rules.sampling.output}
-    output:
-        "Lifestyle_Factor_Ontology_wo_Obsolete_fulltext_output_for_review_with_text.tsv"
-    script:
-        "./generate_output_w_text.sh"
+# Snakemake doesn't work with parallel!?
+# rule extract_text:
+#     input:
+#        {rules.sampling.output}
+#     output:
+#         "Lifestyle_Factor_Ontology_wo_Obsolete_fulltext_output_for_review_with_text.tsv"
+#     script:
+#         "./generate_output_w_text.sh"
         
