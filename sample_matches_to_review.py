@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-lfo = pd.read_csv("./lf_output.tsv", sep="\t", usecols=[0,3,4,5], names=["PMID", "Start", "End", "Match"], dtype={"PMID":str, "Start":"int32", "End":"int32", "Match":str})
+lfo = pd.read_csv("./Lifestyle_Factor_Ontology_wo_Obsolete_output.tsv", sep="\t", usecols=[0,3,4,5], names=["PMID", "Start", "End", "Match"], dtype={"PMID":str, "Start":"int32", "End":"int32", "Match":str})
 lfo["PMID"] = pd.Series(["PMID:"]*lfo.shape[0], index=lfo.index).str.cat(lfo["PMID"])  
 
 # Select the 500 most frequently matched terms based on total PMID count
