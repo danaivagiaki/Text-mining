@@ -29,7 +29,7 @@ plt.close()
 # Pick 5 PIDS for each of the top 500 matched terms; also outputs the text coordinates in the same step!
 for_review = pd.DataFrame(np.vstack(top500["Match"].apply(lambda x: lfo.loc[(lfo.PMID.isin(np.random.choice(lfo.loc[lfo.Match == x, "PMID"].unique(), size=5, replace=False))) & (lfo.Match == x)].drop_duplicates(subset=["PMID", "Match"], keep="first").reset_index()).values), columns=np.append("index", lfo.columns.values)).set_index("index")
 
-for_review.to_csv("./lf_output_for_review.tsv", sep="\t", header=False, index=False)
+for_review.to_csv("./Lifestyle_Factor_Ontology_wo_Obsolete_output_for_review.tsv", sep="\t", header=False, index=False)
 
 
 # pd.DataFrame(np.vstack(list(lfo.groupby(by=["Match"]).apply(lambda x: x.values[np.random.choice(x.values.shape[0], size=5, replace=False)] if(x.values.shape[0]>=5) else x.values[np.random.choice(x.values.shape[0], size=x.values.shape[0], replace=False)]).values)), columns=lfo.columns).to_csv("./lf_output_for_review.tsv", sep="\t", header=False, index=False)
