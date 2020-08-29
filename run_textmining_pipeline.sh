@@ -15,4 +15,4 @@ snakemake --cores 20
 
 echo -e "Extracting the text surrounding the sampled matches..."
 
-./parallel_generate_fulltext_output_w_text.sh Lifestyle_Factor_Ontology_wo_Obsolete_fulltext_output_for_review.tsv
+./generate_output_w_text.sh
