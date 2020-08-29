@@ -36,6 +36,10 @@ _wo_Obsolete_output.tsv``
 
 ### STEP 4: Extract the text flanking the match from the tagcorpus output
 
+#### Step 4a. Sort the articles and the matches according to PMID (k=4 is the matched term)
+`gzip -cd PMC*.tsv.gz | sort -k1,1 -t $'\t' | gzip > sorted_PMC_ALL.tsv.gz`
+`sort -k1,1 -k4,4 -t $'\t' Lifestyle_Factor_Ontology_wo_Obsolete_fulltext_output_for_review.tsv > sorted_Lifestyle_Factor_Ontology_wo_Obsolete_fulltext_output_for_review.tsv`
+
 `nohup ./generate_output_w_text.sh &`
 
 
