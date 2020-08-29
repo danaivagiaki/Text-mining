@@ -2,12 +2,11 @@
 
 
 #PBS -W group_list=pr_47001 -A pr_47001
-#PBS –l procs=25
+#PBS –l procs=28
 #PBS –l walltime=120:00:00
 #PBS -e coordinates2text.err
 #PBS -o coordinates2text.log
 
-module load parallel/20200522
 
 echo -e "Running tagcorpus and sampling matches for review..."
 
