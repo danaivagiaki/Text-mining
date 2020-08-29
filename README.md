@@ -41,13 +41,14 @@ _wo_Obsolete_output.tsv``
 
 `sort -k1,1 -k4,4 -t $'\t' Lifestyle_Factor_Ontology_wo_Obsolete_fulltext_output_for_review.tsv > sorted_Lifestyle_Factor_Ontology_wo_Obsolete_fulltext_output_for_review.tsv`
 
+#### Step 4b. Extract the text (and put the process in the background)
 `nohup ./generate_output_w_text.sh &`
 
 
 
 ## STEPS  1	- 4 using Snakemake (on Computerome 2.0)    
 
-`snakemake --cluster "qsub -l nodes=1:ppn=16,walltime=120:00:00" -j 1`
+`snakemake --cluster "qsub -l procs=28,walltime=120:00:00" -j 1`
 
 
 
