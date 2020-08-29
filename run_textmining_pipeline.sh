@@ -12,6 +12,10 @@ echo -e "Running tagcorpus and sampling matches for review..."
 
 snakemake --cores 20
 
-echo -e "Extracting the text surrounding the sampled matches..."
+echo -e "Sorting files according to PMID..."
 
+gzip -cd PMC*.tsv.gz | sort -k1,1 -t $'\t' | gzip > sorted_PMC_ALL.tsv.gz
+sort -k1,1 -k4,4 -t $'\t' Lifestyle_Factor_Ontology_wo_Obsolete_fulltext_output_for_review.tsv > sorted_Lifestyle_Factor_Ontology_wo_Obsolete_fulltext_output_for_review.tsv
+
+echo -e "Extracting the text surrounding the sampled matches..."
 ./generate_output_w_text.sh
