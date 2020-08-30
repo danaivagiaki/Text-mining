@@ -26,8 +26,7 @@ awk 'BEGIN{FS=", "; OFS="\t"; i=1}{if (NF>1) {for (f=1;f<=NF;f++) print i,$f} el
 hes=lf_output.tsv``
 
 ``gzip -cd `ls -1r /home/danvag/PubMed_Abstracts/*.tsv.gz` | tagcorpus --types=Lifestyle_Factor_Ontology_wo_Obsolete_types.tsv --entities=Lifestyle_Factor_Ontology_wo_Obsolete_entities.tsv --names=disambiguated_Li\
-festyle_Factor_Ontology_wo_Obsolete_names.tsv --groups=Lifestyle_Factor_Ontology_wo_Obsolete_groups.tsv --stopwords=../tagger/data/blacklist_from_Katerina.tsv --threads=16 --out-matches=Lifestyle_Factor_Ontology\
-_wo_Obsolete_output.tsv``
+festyle_Factor_Ontology_wo_Obsolete_names.tsv --groups=Lifestyle_Factor_Ontology_wo_Obsolete_groups.tsv --stopwords=../tagger/data/blacklist_from_Katerina.tsv --threads=16 --out-matches=Lifestyle_Factor_Ontology_wo_Obsolete_output.tsv``
 
 ### STEP 3: Choose 5 random instances of each matched term to review manually
 
@@ -46,7 +45,7 @@ _wo_Obsolete_output.tsv``
 
 
 
-## STEPS  1	- 4 using Snakemake (on Computerome 2.0)    
+## STEPS  1	- 3 using Snakemake (on Computerome 2.0)    
 
 `snakemake --cluster "qsub -l procs=28,walltime=120:00:00" -j 1`
 
